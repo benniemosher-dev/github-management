@@ -80,7 +80,7 @@ locals {
       ]
     },
     {
-      name        = "terraform-cloud-management"
+      name        = "tfcloud-management"
       description = "☁️ TF managing our TF Cloud organization. ☁️"
       template = [{
         owner      = var.config.org-name
