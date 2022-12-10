@@ -91,7 +91,9 @@ ln -s $HOME/Code/personal/secrets/github.auto.tfvars ./github.auto.tfvars
 
 ## Providers
 
-No providers.
+| Name | Version |
+|------|---------|
+| <a name="provider_github"></a> [github](#provider\_github) | 5.12.0 |
 
 ## Modules
 
@@ -99,12 +101,17 @@ No modules.
 
 ## Resources
 
-No resources.
+| Name | Type |
+|------|------|
+| [github_branch_protection.this](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/branch_protection) | resource |
+| [github_organization_settings.organizations](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/organization_settings) | resource |
+| [github_repository.repos](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/repository) | resource |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
+| <a name="input_config"></a> [config](#input\_config) | The config for your organization in Github. | <pre>object({<br>    description      = optional(string, "Managed by Terraform.")<br>    domain           = string<br>    location         = optional(string, null)<br>    twitter-username = optional(string, null)<br>    org-name         = string<br>  })</pre> | n/a | yes |
 | <a name="input_github-config"></a> [github-config](#input\_github-config) | The config for connecting to Github. | <pre>object({<br>    token = string<br>  })</pre> | n/a | yes |
 
 ## Outputs
