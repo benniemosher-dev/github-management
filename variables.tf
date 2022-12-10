@@ -1,6 +1,6 @@
-# variable "config" {
-#   description = "The config for creating this module."
-#   type = object({
-#     name = string
-#   })
-# }
+variable "github-config" {
+  description = "The config for connecting to Github."
+  type = object({
+    token = string
+  })
+}
