@@ -25,6 +25,17 @@ locals {
       ]
     },
     {
+      name        = "cloudflare-management"
+      description = "🗿 TF managing our Cloudflare organization. 🗿"
+      template = [{
+        owner      = var.config.org-name
+        repository = "terraform-domain-concept"
+      }]
+      topics = [
+        "terraform",
+      ]
+    },
+    {
       name        = "github-management"
       description = "🥋 TF managing our Github organization. 🥋"
       template = [{
@@ -80,17 +91,6 @@ locals {
       ]
     },
     {
-      name        = "tfcloud-management"
-      description = "☁️ TF managing our TF Cloud organization. ☁️"
-      template = [{
-        owner      = var.config.org-name
-        repository = "terraform-domain-concept"
-      }]
-      topics = [
-        "terraform",
-      ]
-    },
-    {
       name        = "terraform-domain-concept"
       description = "🏕 A Terraform domain concept template. 🏕"
       is-template = true
@@ -106,6 +106,17 @@ locals {
       name        = "terraform-module"
       description = "🧱 A Terraform module template. 🧱"
       is-template = true
+      topics = [
+        "terraform",
+      ]
+    },
+    {
+      name        = "tfcloud-management"
+      description = "☁️ TF managing our TF Cloud organization. ☁️"
+      template = [{
+        owner      = var.config.org-name
+        repository = "terraform-domain-concept"
+      }]
       topics = [
         "terraform",
       ]
