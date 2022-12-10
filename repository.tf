@@ -16,7 +16,6 @@ resource "github_repository" "repos" {
   homepage_url           = try(each.value.homepage-url, null)
   is_template            = try(each.value.is-template, null)
   name                   = each.value.name
-  private                = try(each.value.private, null)
 
   dynamic "security_and_analysis" {
     for_each = try(each.value.security-and-analysis, [])
