@@ -80,6 +80,17 @@ locals {
       ]
     },
     {
+      name        = "terraform-cloud-management"
+      description = "☁️ TF managing our TF Cloud organization. ☁️"
+      template = [{
+        owner      = var.config.org-name
+        repository = "terraform-domain-concept"
+      }]
+      topics = [
+        "terraform",
+      ]
+    },
+    {
       name        = "terraform-domain-concept"
       description = "🏕 A Terraform domain concept template. 🏕"
       is-template = true

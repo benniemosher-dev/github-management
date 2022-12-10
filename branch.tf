@@ -1,5 +1,5 @@
 resource "github_branch_protection" "this" {
-  for_each = { for repo in github_repository.repos : split("/", repo.full_name)[1] => repo }
+  for_each = { for repo in local.repos : repo.name => repo }
 
   pattern                         = "main"
   repository_id                   = each.key
