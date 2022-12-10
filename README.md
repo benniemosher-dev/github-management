@@ -1,16 +1,8 @@
-# terraform-domain-concept
+# github-management
 
-![CI Terraform](https://github.com/benniemosher-dev/terraform-domain-concept/actions/workflows/ci-terraform.yml/badge.svg)
+![CI Terraform](https://github.com/benniemosher-dev/github-management/actions/workflows/ci-terraform.yml/badge.svg)
 
-🏕 A Terraform domain concept template. 🏕
-
-## ✅ TODO:
-
-Things to change when first creating a domain concept repository:
-
-- [ ] In `README.md` change `terraform-domain-concept` to the name of this domain concept (i.e. `benniemosher-com-infra`, `moniquemosher-com-infra`)
-- [ ] In `providers.tf` update the workspace name
-- [ ] In `README.md` delete the [TODO](README.md#todo) section
+🥋 Infrastructure managing our Github organization. 🥋
 
 ## 📜 Usage:
 
