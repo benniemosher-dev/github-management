@@ -12,7 +12,7 @@ resource "github_organization_settings" "organizations" {
   has_organization_projects                                    = false
   has_repository_projects                                      = false
   location                                                     = var.config.location
-  members_can_create_internal_repositories                     = true
+  members_can_create_internal_repositories                     = false
   members_can_create_pages                                     = false
   members_can_create_private_pages                             = false
   members_can_create_private_repositories                      = true
@@ -25,4 +25,12 @@ resource "github_organization_settings" "organizations" {
   secret_scanning_push_protection_enabled_for_new_repositories = true
   twitter_username                                             = var.config.twitter-username
   web_commit_signoff_required                                  = true
+
+  # TODO: Make these respect the values on apply
+  lifecycle {
+    ignore_changes = [
+      secret_scanning_enabled_for_new_repositories,
+      secret_scanning_push_protection_enabled_for_new_repositories
+    ]
+  }
 }
