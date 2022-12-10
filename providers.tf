@@ -8,12 +8,12 @@ terraform {
     }
   }
 
-  # cloud {
-  #   organization = "benniemosher-dev"
-  #   workspaces {
-  #     name = "github-management"
-  #   }
-  # }
+  cloud {
+    organization = "benniemosher-dev"
+    workspaces {
+      name = "github-management"
+    }
+  }
 }
 
 provider "github" {
