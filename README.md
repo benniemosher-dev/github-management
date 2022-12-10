@@ -1,18 +1,19 @@
-# terraform-domain-concept
+# github-management
 
-![CI Terraform](https://github.com/benniemosher-dev/terraform-domain-concept/actions/workflows/ci-terraform.yml/badge.svg)
+![CI Terraform](https://github.com/benniemosher-dev/github-management/actions/workflows/ci-terraform.yml/badge.svg)
 
-🏕 A Terraform domain concept template. 🏕
-
-## ✅ TODO:
-
-Things to change when first creating a domain concept repository:
-
-- [ ] In `README.md` change `terraform-domain-concept` to the name of this domain concept (i.e. `benniemosher-com-infra`, `moniquemosher-com-infra`)
-- [ ] In `providers.tf` update the workspace name
-- [ ] In `README.md` delete the [TODO](README.md#todo) section
+🥋 Infrastructure managing our Github organization. 🥋
 
 ## 📜 Usage:
+
+### To retrieve Github secrets:
+
+Reach out to [@benniemosher](https://keybase.io/benniemosher) on Keybase and get access to his secrets repo then:
+
+```bash
+git clone keybase://private/benniemosher/secrets
+ln -s $HOME/Code/personal/secrets/github.auto.tfvars ./github.auto.tfvars
+```
 
 - To install dependencies needed run:
   ```bash
@@ -81,16 +82,18 @@ Things to change when first creating a domain concept repository:
 ## 📋 Documentation
 
 <!-- BEGIN_TF_DOCS -->
-
 ## Requirements
 
-| Name                                                                     | Version |
-| ------------------------------------------------------------------------ | ------- |
-| <a name="requirement_terraform"></a> [terraform](#requirement_terraform) | ~> 1.3  |
+| Name | Version |
+|------|---------|
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | ~> 1.3 |
+| <a name="requirement_github"></a> [github](#requirement\_github) | ~> 5.0 |
 
 ## Providers
 
-No providers.
+| Name | Version |
+|------|---------|
+| <a name="provider_github"></a> [github](#provider\_github) | 5.12.0 |
 
 ## Modules
 
@@ -98,14 +101,20 @@ No modules.
 
 ## Resources
 
-No resources.
+| Name | Type |
+|------|------|
+| [github_branch_protection.this](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/branch_protection) | resource |
+| [github_organization_settings.organizations](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/organization_settings) | resource |
+| [github_repository.repos](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/repository) | resource |
 
 ## Inputs
 
-No inputs.
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:--------:|
+| <a name="input_config"></a> [config](#input\_config) | The config for your organization in Github. | <pre>object({<br>    description      = optional(string, "Managed by Terraform.")<br>    domain           = string<br>    location         = optional(string, null)<br>    twitter-username = optional(string, null)<br>    org-name         = string<br>  })</pre> | n/a | yes |
+| <a name="input_github-config"></a> [github-config](#input\_github-config) | The config for connecting to Github. | <pre>object({<br>    token = string<br>  })</pre> | n/a | yes |
 
 ## Outputs
 
 No outputs.
-
 <!-- END_TF_DOCS -->
