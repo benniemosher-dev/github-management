@@ -6,12 +6,3 @@ resource "github_actions_organization_secret" "secrets" {
   encrypted_value = try(each.value.encrypted-value, null)
   plaintext_value = try(each.value.plaintext-value, null)
 }
-
-locals {
-  secrets = [
-    {
-      name            = "CLOUDFLARE_CONFIG"
-      encrypted-value = base64encode(jsonencode(var.cloudflare-config))
-    }
-  ]
-}
