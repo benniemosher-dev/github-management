@@ -124,6 +124,17 @@ locals {
       ]
     },
     {
+      name        = "terraform-aws-oidc"
+      description = "🪪 A TF module for AWS IAM OIDC identity providers. 🪪"
+      template = [{
+        owner      = var.config.org-name
+        repository = "terraform-module"
+      }]
+      topics = [
+        "terraform",
+      ]
+    },
+    {
       name        = "terraform-domain-concept"
       description = "🏕 A Terraform domain concept template. 🏕"
       is-template = true
@@ -166,5 +177,12 @@ locals {
         "terraform",
       ]
     },
+  ]
+
+  secrets = [
+    {
+      name            = "CLOUDFLARE_CONFIG"
+      encrypted-value = base64encode(jsonencode(var.cloudflare-config))
+    }
   ]
 }
