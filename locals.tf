@@ -78,7 +78,8 @@ locals {
       topics = [
         "terraform",
       ]
-      }, {
+    },
+    {
       name        = "terraform-aws-ecs"
       description = "⛺️ A TF module for AWS ECS. ⛺️"
       template = [{
@@ -92,6 +93,17 @@ locals {
     {
       name        = "terraform-aws-kms"
       description = "🗝️ A TF module for AWS encryption keys. 🗝️"
+      template = [{
+        owner      = var.config.org-name
+        repository = "terraform-module"
+      }]
+      topics = [
+        "terraform",
+      ]
+    },
+    {
+      name        = "terraform-aws-loadbalancer"
+      description = "⚖️ A TF module for AWS loadbalancers. ⚖️"
       template = [{
         owner      = var.config.org-name
         repository = "terraform-module"
