@@ -47,6 +47,17 @@ locals {
       ]
     },
     {
+      name        = "terraform-aws-acm"
+      description = "🔖 A TF module for AWS ACM Certificates. 🔖"
+      template = [{
+        owner      = var.config.org-name
+        repository = "terraform-module"
+      }]
+      topics = [
+        "terraform",
+      ]
+    },
+    {
       name        = "terraform-aws-cloudwatch-logs"
       description = "🪵 A TF module for AWS Cloudwatch Logs. 🪵"
       template = [{
