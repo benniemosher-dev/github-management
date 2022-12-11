@@ -78,6 +78,16 @@ locals {
       topics = [
         "terraform",
       ]
+      }, {
+      name        = "terraform-aws-ecs"
+      description = "⛺️ A TF module for AWS ECS. ⛺️"
+      template = [{
+        owner      = var.config.org-name
+        repository = "terraform-module"
+      }]
+      topics = [
+        "terraform",
+      ]
     },
     {
       name        = "terraform-aws-kms"
