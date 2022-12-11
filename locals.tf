@@ -154,5 +154,17 @@ locals {
         "terraform",
       ]
     },
+    {
+      name         = "quest-infra"
+      description  = "🏔 Infrastructure to support the quest. 🏔"
+      homepage-url = "https://quest.benniemosher.dev"
+      template = [{
+        owner      = var.config.org-name
+        repository = "terraform-domain-concept"
+      }]
+      topics = [
+        "terraform",
+      ]
+    },
   ]
 }
