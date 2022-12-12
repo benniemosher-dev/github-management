@@ -181,8 +181,9 @@ locals {
 
   secrets = [
     {
-      name            = "CLOUDFLARE_CONFIG"
-      encrypted-value = base64encode(jsonencode(var.cloudflare-config))
+      name = "CLOUDFLARE_CONFIG"
+      # encrypted-value = base64encode(jsonencode("cloudflare-config = ${var.cloudflare-config}"))
+      plaintext-value = "cloudflare-config=${jsonencode(var.cloudflare-config)}"
     }
   ]
 }
