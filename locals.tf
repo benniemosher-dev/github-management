@@ -3,6 +3,9 @@ locals {
     {
       name        = ".github"
       description = "A ✨special ✨ repository for the public organization profile"
+      topics = [
+        "github"
+      ]
     },
     {
       name         = "benniemosher-com-infra"
@@ -14,6 +17,7 @@ locals {
       }]
       topics = [
         "terraform",
+        "infrastructure-as-code"
       ]
     },
     {
@@ -33,6 +37,8 @@ locals {
       }]
       topics = [
         "terraform",
+        "infrastructure-as-code",
+        "cloudflare"
       ]
     },
     {
@@ -44,6 +50,8 @@ locals {
       }]
       topics = [
         "terraform",
+        "infrastructure-as-code",
+        "github"
       ]
     },
     {
@@ -55,6 +63,8 @@ locals {
       }]
       topics = [
         "terraform",
+        "infrastructure-as-code",
+        "aws"
       ]
     },
     {
@@ -66,6 +76,8 @@ locals {
       }]
       topics = [
         "terraform",
+        "infrastructure-as-code",
+        "aws"
       ]
     },
     {
@@ -77,6 +89,8 @@ locals {
       }]
       topics = [
         "terraform",
+        "infrastructure-as-code",
+        "aws"
       ]
     },
     {
@@ -88,6 +102,8 @@ locals {
       }]
       topics = [
         "terraform",
+        "infrastructure-as-code",
+        "aws"
       ]
     },
     {
@@ -99,6 +115,8 @@ locals {
       }]
       topics = [
         "terraform",
+        "infrastructure-as-code",
+        "aws"
       ]
     },
     {
@@ -110,6 +128,8 @@ locals {
       }]
       topics = [
         "terraform",
+        "infrastructure-as-code",
+        "aws"
       ]
     },
     {
@@ -121,6 +141,8 @@ locals {
       }]
       topics = [
         "terraform",
+        "infrastructure-as-code",
+        "aws"
       ]
     },
     {
@@ -132,6 +154,8 @@ locals {
       }]
       topics = [
         "terraform",
+        "infrastructure-as-code",
+        "aws"
       ]
     },
     {
@@ -144,6 +168,7 @@ locals {
       }]
       topics = [
         "terraform",
+        "infrastructure-as-code"
       ]
     },
     {
@@ -152,6 +177,7 @@ locals {
       is-template = true
       topics = [
         "terraform",
+        "infrastructure-as-code"
       ]
     },
     {
@@ -163,6 +189,7 @@ locals {
       }]
       topics = [
         "terraform",
+        "infrastructure-as-code"
       ]
     },
     {
@@ -175,6 +202,7 @@ locals {
       }]
       topics = [
         "terraform",
+        "infrastructure-as-code"
       ]
     },
   ]
