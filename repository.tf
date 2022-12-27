@@ -7,6 +7,7 @@ resource "github_repository" "repos" {
   allow_merge_commit     = try(each.value.allow-merge-commit, false)
   allow_rebase_merge     = try(each.value.allow-rebase-commit, false)
   allow_squash_merge     = try(each.value.allow-squash-merge, true)
+  allow_update_branch    = try(each.value.allow-update-branch, true)
   delete_branch_on_merge = try(each.value.delete-branch-on-merge, true)
   description            = each.value.description
   has_downloads          = try(each.value.has-downloads, false)
