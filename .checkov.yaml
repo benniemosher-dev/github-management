@@ -1,0 +1,2 @@
+skip-check:
+  - CKV_GIT_5 # Solo developer - 2 PR approvals not practical
