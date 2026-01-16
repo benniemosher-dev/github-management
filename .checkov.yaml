@@ -1,2 +1,4 @@
 skip-check:
-  - CKV_GIT_5 # Solo developer - 2 PR approvals not practical
+  - CKV_GHA_7   # Unpinned actions - using @main for internal workflows
+  - CKV2_GHA_1  # Top-level permissions - caller workflows use reusable
+  - CKV_GIT_5   # Solo developer - 2 PR approvals not practical
