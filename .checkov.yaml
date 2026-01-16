@@ -1,5 +1,3 @@
-framework:
-  - terraform
 skip-check:
   - CKV_GHA_7   # Unpinned actions - using @main for internal workflows
   - CKV2_GHA_1  # Top-level permissions - caller workflows use reusable
