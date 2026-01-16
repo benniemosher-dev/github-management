@@ -1,6 +1,7 @@
 skip-check:
   - CKV_GHA_7   # Unpinned actions - using @main for internal workflows
   - CKV2_GHA_1  # Top-level permissions - caller workflows use reusable
+  - CKV2_GIT_1  # Branch protection handled separately in branch.tf
   - CKV_GIT_1   # Public repos are intentional for open source
   - CKV_GIT_3   # vulnerability_alerts defaults to true in repository.tf
   - CKV_GIT_5   # Solo developer - 2 PR approvals not practical
