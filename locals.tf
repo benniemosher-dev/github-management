@@ -21,17 +21,6 @@ locals {
       ]
     },
     {
-      name        = "cli"
-      description = "🧮 A cli to manage internal resources 🧮"
-      # Archived. Matches its live settings, since an archived repo can't be edited.
-      archived         = true
-      allow-auto-merge = false
-      topics = [
-        "cli",
-        "python",
-      ]
-    },
-    {
       name        = "cloudflare-management"
       description = "🗿 TF managing our Cloudflare organization. 🗿"
       template = [{
@@ -186,28 +175,6 @@ locals {
     {
       name        = "tfcloud-management"
       description = "☁️ TF managing our TF Cloud organization. ☁️"
-      template = [{
-        owner      = var.config.org-name
-        repository = "terraform-domain-concept"
-      }]
-      topics = [
-        "terraform",
-        "infrastructure-as-code"
-      ]
-    },
-    {
-      name        = "quest-infra"
-      description = "🏔 Infrastructure to support the quest. 🏔"
-      # Archived. Matches its live settings, since an archived repo can't be edited.
-      archived         = true
-      allow-auto-merge = false
-      renovate         = false
-      protection = {
-        require-code-owner-reviews      = true
-        require-last-push-approval      = true
-        required-approving-review-count = 1
-      }
-      homepage-url = "https://quest.benniemosher.dev"
       template = [{
         owner      = var.config.org-name
         repository = "terraform-domain-concept"

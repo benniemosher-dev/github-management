@@ -4,5 +4,5 @@ resource "github_actions_organization_secret" "secrets" {
   secret_name     = each.value.name
   visibility      = try(each.value.visibility, "all")
   encrypted_value = try(each.value.encrypted-value, null)
-  plaintext_value = try(each.value.plaintext-value, null)
+  value           = try(each.value.plaintext-value, null)
 }
