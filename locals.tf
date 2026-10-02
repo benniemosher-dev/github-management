@@ -23,6 +23,9 @@ locals {
     {
       name        = "cli"
       description = "🧮 A cli to manage internal resources 🧮"
+      # Archived. Matches its live settings, since an archived repo can't be edited.
+      archived         = true
+      allow-auto-merge = false
       topics = [
         "cli",
         "python",
@@ -193,8 +196,17 @@ locals {
       ]
     },
     {
-      name         = "quest-infra"
-      description  = "🏔 Infrastructure to support the quest. 🏔"
+      name        = "quest-infra"
+      description = "🏔 Infrastructure to support the quest. 🏔"
+      # Archived. Matches its live settings, since an archived repo can't be edited.
+      archived         = true
+      allow-auto-merge = false
+      renovate         = false
+      protection = {
+        require-code-owner-reviews      = true
+        require-last-push-approval      = true
+        required-approving-review-count = 1
+      }
       homepage-url = "https://quest.benniemosher.dev"
       template = [{
         owner      = var.config.org-name

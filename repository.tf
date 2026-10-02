@@ -3,11 +3,13 @@
 resource "github_repository" "repos" {
   for_each = { for repo in local.repos : repo.name => repo }
 
-  allow_auto_merge       = try(each.value.allow-auto-merge, false)
+  # On by default so Renovate can merge pin and minor/patch PRs once CI passes.
+  allow_auto_merge       = try(each.value.allow-auto-merge, true)
   allow_merge_commit     = try(each.value.allow-merge-commit, false)
   allow_rebase_merge     = try(each.value.allow-rebase-commit, false)
   allow_squash_merge     = try(each.value.allow-squash-merge, true)
   allow_update_branch    = try(each.value.allow-update-branch, true)
+  archived               = try(each.value.archived, false)
   delete_branch_on_merge = try(each.value.delete-branch-on-merge, true)
   description            = each.value.description
   has_downloads          = try(each.value.has-downloads, false)
@@ -45,9 +47,15 @@ resource "github_repository" "repos" {
     }
   }
 
-  topics               = try(each.value.topics, null)
-  visibility           = try(each.value.visibility, "public")
-  vulnerability_alerts = try(each.value.vulnerability-alerts, true)
+  # The renovate topic is how the self-hosted Renovate CronJobs opt a repo in
+  # (RENOVATE_AUTODISCOVER_TOPICS). Every repo gets it unless it sets renovate = false.
+  topics = distinct(concat(
+    try(each.value.topics, []),
+    try(each.value.renovate, true) ? ["renovate"] : [],
+  ))
+  visibility = try(each.value.visibility, "public")
+  # Off: Renovate handles dependency updates, not Dependabot.
+  vulnerability_alerts = try(each.value.vulnerability-alerts, false)
 
   # lifecycle {
   #   ignore_changes = [

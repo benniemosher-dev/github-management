@@ -1,12 +1,14 @@
+# Dependabot and the dependency graph stay off: Renovate handles dependency updates.
+# Web commit signoff stays off so API and app commits (Renovate, scripts) aren't rejected.
 resource "github_organization_settings" "organizations" {
   advanced_security_enabled_for_new_repositories               = false
   billing_email                                                = "github@${var.config.domain}"
   blog                                                         = "https://${var.config.domain}"
   company                                                      = var.config.org-name
   default_repository_permission                                = "read"
-  dependabot_alerts_enabled_for_new_repositories               = true
-  dependabot_security_updates_enabled_for_new_repositories     = true
-  dependency_graph_enabled_for_new_repositories                = true
+  dependabot_alerts_enabled_for_new_repositories               = false
+  dependabot_security_updates_enabled_for_new_repositories     = false
+  dependency_graph_enabled_for_new_repositories                = false
   description                                                  = var.config.description
   email                                                        = "github@${var.config.domain}"
   has_organization_projects                                    = false
@@ -24,7 +26,7 @@ resource "github_organization_settings" "organizations" {
   secret_scanning_enabled_for_new_repositories                 = true
   secret_scanning_push_protection_enabled_for_new_repositories = true
   twitter_username                                             = var.config.twitter-username
-  web_commit_signoff_required                                  = true
+  web_commit_signoff_required                                  = false
 
   # TODO: Make these respect the values on apply
   lifecycle {
