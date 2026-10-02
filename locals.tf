@@ -23,6 +23,7 @@ locals {
     {
       name        = "cli"
       description = "🧮 A cli to manage internal resources 🧮"
+      archived    = true
       topics = [
         "cli",
         "python",
@@ -193,9 +194,13 @@ locals {
       ]
     },
     {
-      name         = "quest-infra"
-      description  = "🏔 Infrastructure to support the quest. 🏔"
-      homepage-url = "https://quest.benniemosher.dev"
+      name        = "quest-infra"
+      description = "🏔 Infrastructure to support the quest. 🏔"
+      # Archived. Matches its live settings, since an archived repo can't be edited.
+      archived         = true
+      allow-auto-merge = false
+      renovate         = false
+      homepage-url     = "https://quest.benniemosher.dev"
       template = [{
         owner      = var.config.org-name
         repository = "terraform-domain-concept"
