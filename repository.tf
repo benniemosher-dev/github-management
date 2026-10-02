@@ -53,8 +53,9 @@ resource "github_repository" "repos" {
     try(each.value.topics, []),
     try(each.value.renovate, true) ? ["renovate"] : [],
   ))
-  visibility           = try(each.value.visibility, "public")
-  vulnerability_alerts = try(each.value.vulnerability-alerts, true)
+  visibility = try(each.value.visibility, "public")
+  # Off: Renovate handles dependency updates, not Dependabot.
+  vulnerability_alerts = try(each.value.vulnerability-alerts, false)
 
   # lifecycle {
   #   ignore_changes = [
