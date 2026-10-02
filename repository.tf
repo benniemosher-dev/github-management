@@ -9,10 +9,8 @@ resource "github_repository" "repos" {
   allow_rebase_merge     = try(each.value.allow-rebase-commit, false)
   allow_squash_merge     = try(each.value.allow-squash-merge, true)
   allow_update_branch    = try(each.value.allow-update-branch, true)
-  archived               = try(each.value.archived, false)
   delete_branch_on_merge = try(each.value.delete-branch-on-merge, true)
   description            = each.value.description
-  has_downloads          = try(each.value.has-downloads, false)
   has_issues             = try(each.value.has-issues, true)
   has_projects           = try(each.value.has-projects, false)
   has_wiki               = try(each.value.has-wiki, false)
@@ -54,8 +52,6 @@ resource "github_repository" "repos" {
     try(each.value.renovate, true) ? ["renovate"] : [],
   ))
   visibility = try(each.value.visibility, "public")
-  # Off: Renovate handles dependency updates, not Dependabot.
-  vulnerability_alerts = try(each.value.vulnerability-alerts, false)
 
   # lifecycle {
   #   ignore_changes = [
